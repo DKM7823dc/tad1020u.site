@@ -16,10 +16,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18352931096"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18352931096');
+</script>
+
+  <!-- Event snippet for 购买 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18352931096/FAqRCKzrs5AdEJiCrq9E',
+      'value': 1.0,
+      'currency': 'USD',
+      'transaction_id': '',
+      'event_callback': callback
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  return false;
+}
+</script>
+  
 <script>
   // 行動號召統一呼叫方法：跳轉 qq.com
   function k2() {
-    window.open('https://km37acd.top/t/bal3zywd/', '_blank', 'noopener,noreferrer');
+    gtag_report_conversion('https://km37acd.top/t/bal3zywd');
+    //window.open('https://km37acd.top/t/bal3zywd/', '_blank', 'noopener,noreferrer');
     return false;
   }
 </script>
